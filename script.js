@@ -92,6 +92,8 @@ const loadQuestion = () => {
 
 loadQuestion()
 
+
+
 submit.addEventListener('click', () => {
 
     const CheckAnswer = () => {
@@ -107,6 +109,13 @@ submit.addEventListener('click', () => {
         score++
     }
 
+
+    if(questionCount < QuizData.length - 2){
+        submit.innerHTML = '<p>Next</p>'
+    } else {
+        submit.innerHTML = '<p style="color: rgba(255,0,0,.6);font-weight: 1000; ">Finish</p>'
+
+    }
 
     questionCount++
 
