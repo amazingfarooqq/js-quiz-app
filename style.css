@@ -10,6 +10,10 @@ body {
     background-color: #3b9dff;
 }
 
+.odd {
+    color: #264653;
+  }
+
 
 .quiz-container {
     display: flex;
@@ -28,7 +32,11 @@ body {
     box-shadow: 0 1rem 1rem -0.7rem rgba(0,0,0,0.1);
 }
 
-.question , .timer{
+.question{
+    font-size: 30px;
+    font-weight: 600;
+}
+#timer{
     font-size: 30px;
     font-weight: 600;
 }

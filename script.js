@@ -36,6 +36,44 @@ startTest.addEventListener('click',  () => {
 })
 
 
+const timer = document.getElementById("timer");
+let timerInterval;
+
+startTimer = () => {
+  // Firs twe start by clearing the existing timer, in case of a restart
+  clearInterval(timerInterval);
+  // Then we set the variables
+  let second = 0,
+    minute = 1;
+  
+    // Next we set a interval every 1000 ms
+    timerInterval = setInterval(function () {
+      timer.classList.toggle("odd");
+
+      // We set the timer text to include a two digit representation
+      timer.innerHTML =
+        (minute < 10 ? "0" + minute : minute) +
+        ":" +
+        (second < 10 ? "0" + second : second);
+
+      // We check if the second equals 0
+      if (second == 0) {
+        // If so, we remove a minute and reset our seconds to 60
+        if (minute === 0) {
+          // Full done
+          clearInterval(timerInterval);
+          alert("Time is up!");
+        }
+        minute--;
+        second = 60;
+      }
+      second--;
+    }, 1000);
+};
+
+
+
+
 
 const quiz = document.querySelector('.quiz')
 
@@ -87,6 +125,7 @@ submit.addEventListener('click', () => {
     if (questionCount < QuizData.length) {
         loadQuestion()
     } else {
+
         quiz.innerHTML = `
         <h1> scored ${score} / ${QuizData.length} </h1>
         <button class="btn" onclick="location.reload()"> Restart Quiz </button>
@@ -94,3 +133,7 @@ submit.addEventListener('click', () => {
     }
 
 })
+
+
+
+

@@ -14,13 +14,19 @@
 <body>
     <div class="startPage"
         style="display: flex;justify-content: center;align-items: center;height: 100vh;position: fixed;width:100vw;background-color: white;">
-        <button class="btn" id="startTest">Start Test</button>
+        <button class="btn" id="startTest" onclick="startTimer()">Start Test</button>
 
     </div>
 
 
     <div class="quiz-container">
         <div class="quiz">
+
+            <div style="display: flex;justify-content: space-between;">
+                <h2 class="question"></h2>
+                <div id="timer"></div>
+            </div>
+
             <ul>
                 <li>
                     <input type="radio" name="answer" id="ans1" class="answer">
